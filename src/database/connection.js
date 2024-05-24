@@ -11,5 +11,4 @@ function main() {
         .then(() => console.log("Conectado ao banco Mongo!"))
         .catch(err => console.log("Erro ao conectar ao banco Mongo: ", err))
 }
-
 module.exports = main

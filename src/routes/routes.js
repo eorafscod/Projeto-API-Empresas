@@ -5,7 +5,7 @@ const router = express.Router()
 const CargoController = require('../controllers/CargoController')
 const DepartamentoController = require('../controllers/DepartamentoController')
 const FuncionarioController = require('../controllers/FuncionarioController')
-// const ProjectControlle = require('../controllers/ProjectController')
+const ProjetoController = require('../controllers/ProjetoController');
 const TarefaController  = require('../controllers/TarefaController')
 
 // validators
@@ -37,12 +37,12 @@ router.post('/funcionarios', validarFuncionario, FuncionarioController.criar)
 router.put('/funcionarios/:id', validarID, validarFuncionario, FuncionarioController.atualizar)
 router.delete('/funcionarios/:id', validarID, FuncionarioController.excluir)
 
-// // Project
-// router.get('/Project', ProjectController.buscarTodos)
-// router.get('/Project/:id', validarID, ProjectController.buscarPorID)
-// router.post('/Project', validarFuncionario, projectController.criar)
-// router.put('/Project/:id', validarID, validarFuncionario, projectController.atualizar)
-// router.delete('/Project/:id', validarID, ProjectController.excluir)
+// Projeto
+router.get('/projetos', ProjetoController.buscarTodos);
+router.get('/projetos/:id', ProjetoController.buscarPorID);
+router.post('/projetos', ProjetoController.criar);
+router.put('/projetos/:id', ProjetoController.atualizar);
+router.delete('/projetos/:id', ProjetoController.excluir);
 
 // Tarefa
 router.get('/tarefas', TarefaController.buscarTodos);
